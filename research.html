@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research — Alma Lago</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.page-header { padding: 4rem 0 3rem; }
+.page-header h2 {
+  font-family: 'EB Garamond', 'Times New Roman', Georgia, serif;
+  font-weight: 400;
+  font-size: 2rem;
+  letter-spacing: -.01em;
+  color: var(--text);
+  margin-bottom: .5rem;
+}
+.page-header p { color: var(--text2); font-size: .95rem; max-width: 480px; }
+
+/* ─── pub entry ─── */
+.pub-list { list-style: none; }
+
+.pub {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1.8rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+.pub:first-child { border-top: 1px solid var(--border); }
+
+/* thumbnail */
+.pub-thumb {
+  width: 160px;
+  aspect-ratio: 1 / 1;
+  border-radius: 6px;
+  background: var(--card);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.pub-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* placeholder when no image yet */
+.pub-thumb.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .65rem;
+  color: var(--text3);
+  letter-spacing: .05em;
+}
+
+/* text side */
+.pub-body { display: flex; flex-direction: column; gap: .4rem; }
+
+.pub-title {
+  font-family: 'EB Garamond', 'Times New Roman', Georgia, serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: var(--text);
+  text-decoration: none;
+}
+.pub-title:hover { color: var(--accent); }
+
+.pub-authors {
+  font-size: .82rem;
+  color: var(--text2);
+  line-height: 1.5;
+}
+.pub-authors .me { color: var(--text); font-weight: 500; }
+
+.pub-venue {
+  font-family: 'EB Garamond', 'Times New Roman', Georgia, serif;
+  font-style: italic;
+  font-size: .9rem;
+  color: var(--text3);
+}
+
+.pub-links {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+  margin-top: .3rem;
+}
+.pub-link {
+  font-size: .78rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 400;
+  letter-spacing: .01em;
+}
+.pub-link:hover { text-decoration: underline; }
+.pub-link::before { content: '['; }
+.pub-link::after  { content: ']'; }
+
+/* tags */
+.pub-tags { display: flex; gap: .35rem; flex-wrap: wrap; margin-top: .2rem; }
+
+@media (max-width: 600px) {
+  .pub { grid-template-columns: 1fr; }
+  .pub-thumb { width: 100%; aspect-ratio: 16/9; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <ul>
+      <li><a href="index.html">home</a></li>
+      <li><a href="research.html" class="active">research</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <div class="page-header reveal">
+    <h2>Research</h2>
+  </div>
+
+  <ul class="pub-list">
+
+    <!-- ── paper 1 ── -->
+    <li class="pub reveal">
+      <div class="pub-thumb">
+        <img src="img/research/goal-env.png" alt="Mechanistic Foundations" style="width:100%; height:100%; object-fit:fill; display:block;">
+      </div>
+      <div class="pub-body">
+        <a class="pub-title" href="https://arxiv.org/abs/2603.15248">Mechanistic foundations of goal-directed control</a>
+        <p class="pub-authors">
+          <span class="me">Alma Lago</span>
+        </p>
+        <p class="pub-venue">Preprint, 2025</p>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2603.15248">arXiv</a>
+          <a class="pub-link" href="https://github.com/almalago/goal-tracking-env">code</a>
+          <a class="pub-link" href="https://almalago.github.io/control-arbitration/">website</a>
+        </div>
+      </div>
+    </li>
+
+    <!-- ── paper 2 (OBR) ── -->
+    <li class="pub reveal">
+      <div class="pub-thumb">
+        <img src="img/research/obr.png" alt="OBR" style="width:100%; height:100%; object-fit:fill; display:block;">
+      </div>
+      <div class="pub-body">
+        <a class="pub-title" href="https://arxiv.org/abs/2411.17438">Object-centric proto-symbolic behavioural reasoning from pixels</a>
+        <p class="pub-authors">
+          Ruben van Bergen, Justus Hübotter, <span class="me">Alma Lago</span>, Pablo Lanillos
+        </p>
+        <p class="pub-venue">Neural Networks, 2025</p>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2411.17438">arXiv</a>
+          <a class="pub-link" href="https://github.com/rubvber/OBR">code</a>
+        </div>
+      </div>
+    </li>
+
+
+  </ul>
+
+  <!-- RESEARCH MEMORIES -->
+
+
+</div>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

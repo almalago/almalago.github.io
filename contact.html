@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Alma Lago</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.page-header { padding: 4rem 0 3rem; }
+.page-header h2 {
+  font-family: 'EB Garamond', 'Times New Roman', Georgia, serif;
+  font-weight: 400;
+  font-size: 2rem;
+  letter-spacing: -.01em;
+  color: var(--text);
+  margin-bottom: .5rem;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <ul>
+      <li><a href="index.html">home</a></li>
+      <li><a href="research.html">research</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="contact.html" class="active">contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <div class="page-header reveal">
+    <h2>Contact</h2>
+  </div>
+
+  <div class="reveal" style="padding-bottom: 4rem;">
+    <div style="display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; font-family:'JetBrains Mono',monospace; font-size:.75rem; letter-spacing:.03em;">
+      <a href="mailto:alma.lago@outlook.com" style="color:var(--text2); text-decoration:none;">email</a>
+      <span style="color:var(--text3);">·</span>
+      <a href="#" style="color:var(--text2); text-decoration:none;">scholar</a>
+      <span style="color:var(--text3);">·</span>
+      <a href="https://github.com/almalago" target="_blank" rel="noopener" style="color:var(--text2); text-decoration:none;">github</a>
+      <span style="color:var(--text3);">·</span>
+      <a href="https://x.com/almavlago" target="_blank" rel="noopener" style="color:var(--text2); text-decoration:none;">twitter</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
